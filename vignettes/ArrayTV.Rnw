@@ -159,7 +159,8 @@ agcM1List <- gcCorrect(agilent[, "M", drop=FALSE],
                        increms=increms,
                        maxwins=max.window,
                        build="hg18")
-stopCluster(cl)
+if(require(doParallel))
+    stopCluster(cl)
 @
 
 To plot the TV score for each of the windows evaluated, we concatenate
@@ -450,7 +451,8 @@ cl <- makeCluster(8)
 registerDoParallel(cl)
 }
 ## ... execute gcCorrect
-stopCluster(cl)
+if(require(doParallel))
+    stopCluster(cl)
 @
 
 
