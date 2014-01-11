@@ -25,5 +25,6 @@ test_gcCorrectMain <- function() {
     ## Our TVscore should be pretty large for this chromosome
     checkTrue(nimcM1List[["maxTVscore"]] > 0.05)
     save(nimcM1List, file=file.path(path,"nimcM1List.rda"))
-    stopCluster(cl)
+    if(require(doParallel))
+        stopCluster(cl)
 }
