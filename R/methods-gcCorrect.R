@@ -136,7 +136,7 @@ gcModel <- function(data, window, verbose = FALSE) {
         chr <- chroms[i]
         j <- which(chromosome(data) == chr)
         ## calculates the gc content for each window of size increm
-        pregcFrac <- letterFrequencyInSlidingView(unmasked(Hsapiens[[chr]]), view.width = increm, 
+        pregcFrac <- letterFrequencyInSlidingView(Hsapiens[[chr]], view.width = increm, 
             "CG", as.prob = TRUE)
         ## if(verbose) print('gc content stored')
         startinds <- rep(start(data)[j], each = maxwin/increm) + rep(seq(0, maxwin - 
@@ -189,7 +189,7 @@ gcModelSeq <- function(data, window, verbose = FALSE) {
         chr <- chroms[i]
         j <- which(chromosome(data) == chr)
         ## calculates the gc content for each window of size increm
-        pregcFrac <- letterFrequencyInSlidingView(unmasked(Hsapiens[[chr]]), view.width = increm, 
+        pregcFrac <- letterFrequencyInSlidingView(Hsapiens[[chr]], view.width = increm, 
             "CG", as.prob = TRUE)
         ## if(verbose) print('gc content stored')
         startinds <- rep(starts, each = maxwin/increm) + rep(seq(0, maxwin - increm, 

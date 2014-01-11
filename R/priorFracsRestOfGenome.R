@@ -22,11 +22,11 @@ priorFracsRestOfGenome <- function(forwardExtend, reverseExtend, chrToInvestigat
         startinds[startinds > (length(Hsapiens[[schr]]) - winlen)] = (length(Hsapiens[[schr]]) - 
             winlen)
         if (diff(range(startinds)) >= winlen) {
-            gcIndivChr = letterFrequencyInSlidingView(unmasked(Hsapiens[[schr]]), 
+            gcIndivChr = letterFrequencyInSlidingView(Hsapiens[[schr]], 
                 view.width = winlen, "CG", as.prob = T)[startinds]
             gcIndivChr[is.na(gcIndivChr)] = tail(gcIndivChr, 1)
         } else {
-            gcIndivChr = rep(letterFrequencyInSlidingView(unmasked(Hsapiens[[schr]]), 
+            gcIndivChr = rep(letterFrequencyInSlidingView(Hsapiens[[schr]], 
                 view.width = length(Hsapiens[[schr]]), "CG", as.prob = T), length(startinds))
         }
         ### 

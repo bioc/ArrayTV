@@ -2,7 +2,7 @@ gcFracOneRange <- function(schr, starts, increm, maxwin, verbose = FALSE) {
     if (verbose) 
         message("Getting gc content From BS genome Object")
     Hsapiens <- get("Hsapiens")
-    pregcFrac <- letterFrequencyInSlidingView(unmasked(Hsapiens[[schr]]), view.width = increm, 
+    pregcFrac <- letterFrequencyInSlidingView(Hsapiens[[schr]], view.width = increm, 
         "CG", as.prob = T)
     if (verbose) 
         message("gc content stored")
