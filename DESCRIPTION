@@ -1,5 +1,5 @@
 Package: ArrayTV
-Version: 1.1.2
+Version: 1.1.3
 Title: Implementation of wave correction for arrays
 Date: Thu Sep 19 10:45:22 EDT 2013
 Author: Eitan Halper-Stromberg
@@ -17,4 +17,4 @@ Collate: AllGenerics.R calctvScore.R computeGC.R correctionTVscore.R
         CorrectM.R gcCorrectMain.R gcFracAllWin.R gcFracOneRange.R
         getGCinBestWindowGenome.R methods-gcCorrect.R priorFracs.R
         priorFracsRestOfGenome.R
-biocViews: Bioinformatics,CopyNumberVariants
+biocViews: CopyNumberVariation
