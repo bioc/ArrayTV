@@ -119,6 +119,10 @@ setMethod("gcCorrect", signature(object = "BafLrrSetList"), function(object, ...
     gcCorrectBafLrrList(object, ...)
 })
 
+## ----------------------------------------------------------------------------
+## All the code below is broken dead code that operates on SummarizedExperiment
+## objects. [H. Pages - May 13, 2015]
+
 gcModel <- function(data, window, verbose = FALSE) {
     ## assume data is summarized experiment
     build <- metadata(rowData(data))$genome
