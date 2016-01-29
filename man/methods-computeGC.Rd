@@ -45,7 +45,7 @@
 	brList <- BafLrrSetList(cnSetExample)
 	pos <- unlist(position(brList))
 	chr <- paste("chr",
-		     rep(chromosome(brList), elementLengths(brList)),
+		     rep(chromosome(brList), elementNROWS(brList)),
 		     sep="")
 	gc.matrix1 <- ArrayTV:::computeGC(x=pos, maxwins=c(12,10e3),
            				  increms=c(12,10e3),

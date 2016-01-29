@@ -10,7 +10,7 @@ setMethod("computeGC", signature(x = "numeric"), function(x, maxwins, increms, c
 
 setMethod("computeGC", signature(x = "BafLrrSetList"), function(x, maxwins, increms, 
     chr, build, ...) {
-    chr <- paste("chr", rep(chromosome(x), elementLengths(x)), sep = "")
+    chr <- paste("chr", rep(chromosome(x), elementNROWS(x)), sep = "")
     pos <- unlist(position(x))
     build <- genomeBuild(x)
     annotation.pkg <- paste("BSgenome.Hsapiens.UCSC.", build, sep = "")

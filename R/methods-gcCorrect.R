@@ -59,7 +59,7 @@ gcCorrectBafLrrList <- function(object, index.samples, providedGC = NULL, ...) {
         index.samples <- seq_len(ncol(object[[1]]))
     ## to keep RAM in check, do in batches of samples
     index.list <- splitIndicesByLength(index.samples, ocSamples())
-    l <- elementLengths(object)
+    l <- elementNROWS(object)
     chr <- paste("chr", rep(chromosome(object), l), sep = "")
     pos <- unlist(position(object))
     ## if(return.score) score.list <- list()
