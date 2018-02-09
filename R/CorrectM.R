@@ -61,7 +61,7 @@ CorrectM <- function(Ms, chr, starts, priorFracWremaining, narrays, userProvided
             end = removeend))
         ## tokeepLogical <- is.na(GenomicRanges::match(locsAsRange,
         ## removeAsRange,match.if.overlap=TRUE))
-        tokeepLogical <- is.na(findOverlaps(locsAsRange, removeAsRange, select = "first"))
+        tokeepLogical <- !overlapsAny(locsAsRange, removeAsRange)
         tokeep <- which(tokeepLogical)
         toremove <- which(!tokeepLogical)
         if (length(toremove) > length(tokeep)) {
@@ -196,7 +196,7 @@ CorrectM <- function(Ms, chr, starts, priorFracWremaining, narrays, userProvided
 ## GRanges(seqnames=removechr, ranges=IRanges(start=removestart, end=removeend))
 ## ## ##tokeepLogical <- is.na(GenomicRanges::match(locsAsRange,
 ## removeAsRange,match.if.overlap=TRUE)) tokeepLogical <-
-## is.na(findOverlaps(locsAsRange, removeAsRange, select='first')) tokeep <-
+## !overlapsAny(locsAsRange, removeAsRange) tokeep <-
 ## which(tokeepLogical) toremove <- which(!tokeepLogical) if(length(toremove) >
 ## length(tokeep)){ tokeep <- seq_along(tokeepLogical) toremove <- numeric() } ##
 ## ## calculate new TV, We only used a sample of the data ## to get the best

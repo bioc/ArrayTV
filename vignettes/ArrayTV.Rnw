@@ -381,10 +381,10 @@ spikeIn <- IRanges(start=45396506,end=45537976)
 spikeinStart <- 45396506; spikeinEnd <- 45537976
 marker.raw$spikeIn <- marker.raw$cbs.seg
 marker.arrayTV$spikeIn <- marker.arrayTV$cbs.seg
-index1 <- which(is.na(findOverlaps(unlist(ranges(marker.raw)),
-				  spikeIn,select="first")))
-index2 <- which(is.na(findOverlaps(unlist(ranges(marker.arrayTV)),
-				  spikeIn,select="first")))
+index1 <- which(!overlapsAny(unlist(as(ranges(marker.raw), "IntegerList")),
+                             spikeIn))
+index2 <- which(!overlapsAny(unlist(as(ranges(marker.arrayTV), "IntegerList")),
+                             spikeIn))
 marker.raw$spikeIn[index1] <- NA
 marker.arrayTV$spikeIn[index2] <- NA
 
