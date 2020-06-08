@@ -1,5 +1,5 @@
 Package: ArrayTV
-Version: 1.27.0
+Version: 1.27.1
 Title: Implementation of wave correction for arrays
 Date: Thu Sep 19 10:45:22 EDT 2013
 Author: Eitan Halper-Stromberg
@@ -17,5 +17,6 @@ Enhances: doMC, doSNOW, doParallel
 Collate: AllGenerics.R calctvScore.R computeGC.R correctionTVscore.R
         CorrectM.R gcCorrectMain.R gcFracAllWin.R gcFracOneRange.R
         getGCinBestWindowGenome.R methods-gcCorrect.R priorFracs.R
-        priorFracsRestOfGenome.R
+        priorFracsRestOfGenome.R zzz.R
 biocViews: CopyNumberVariation
+PackageStatus: Deprecated
